@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Project;
+use App\Http\Requests\ProjectCreateRequest;
 
 class ProjectController extends Controller
 {
@@ -34,7 +34,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectCreateRequest $request)
     {
         Project::create([
             'title' => request('title'),

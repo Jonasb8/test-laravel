@@ -7,6 +7,17 @@
   <form action="/projects" method="post">
     @csrf
 
+    <!-- error message -->
+    @if ($errors->any())
+        <div class="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="field">
       <label class="label">Title</label>
       <div class="control">
